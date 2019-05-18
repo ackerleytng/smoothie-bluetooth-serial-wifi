@@ -3,6 +3,7 @@ import re
 from utils.connectivity import is_connected_to_internet
 from utils.wifi_list import scan_wifi_aps
 from utils.wpa import add_config, remove_existing_config
+from utils.state import refresh_chromium
 
 
 def connected_handler(_):
@@ -53,6 +54,11 @@ def disconnect_handler(_):
     return "Removed existing wifi configuration"
 
 
+def restart_handler(_):
+    refresh_chromium()
+    return "smoothie should have restarted! Give it some time!"
+
+
 commands = {
     "connected?": {
         "description": "check if smoothie is connected to the internet",
@@ -71,4 +77,8 @@ commands = {
         "description": "disconnect from wifi",
         "handler": disconnect_handler,
     },
+    "restart": {
+        "description": "restart smoothie after connecting to wifi",
+        "handler": restart_handler,
+    }
 }
