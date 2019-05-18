@@ -1,9 +1,10 @@
 # Bluetooth Config
 
-| File                    | Path on raspi                               | Purpose                                                             |
-| ---                     | ---                                         | ---                                                                 |
-| bt-agent.service        | /etc/systemd/system/bt-agent.service        | Starts agent to handle authentication                               |
-| bt-wifi-manager.service | /etc/systemd/system/bt-wifi-manager.service | Starts wifi manager to handle incoming Bluetooth serial connections |
+| File                    | Path on raspi                               | Purpose                                                                                                |
+| ---                     | ---                                         | ---                                                                                                    |
+| bt-agent.service        | /etc/systemd/system/bt-agent.service        | Starts agent to handle authentication                                                                  |
+| bt-wifi-manager.service | /etc/systemd/system/bt-wifi-manager.service | Starts wifi manager to handle incoming Bluetooth serial connections                                    |
+| bluetooth.service       | /lib/systemd/system/bluetooth.service       | Override bluetooth.service on the raspi for compatibility and to add Serial Port profile for discovery |
 
 # Setup
 
