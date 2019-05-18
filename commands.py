@@ -34,6 +34,9 @@ def _parse_connect_request(input_):
 
 
 def connect_handler(input_):
+    if is_connected_to_internet():
+        return "You're already connected!"
+
     parsed = _parse_connect_request(input_)
     if parsed is None:
         return ("Couldn't find network name and password in your request! "
