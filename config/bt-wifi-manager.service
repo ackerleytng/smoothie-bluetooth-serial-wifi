@@ -1,0 +1,12 @@
+[Unit]
+Description=Bluetooth Wifi Manager
+
+[Service]
+User=pi
+Group=pi
+ExecStartPre=+/usr/bin/sdptool add SP
+ExecStart=/home/pi/smoothie-bluetooth-serial-wifi/main.py
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
