@@ -1,5 +1,5 @@
 [Unit]
-Description=Bluetooth Auth Agent
+Description=Bluetooth Auth Agent for smoothie
 
 [Service]
 ExecStart=/usr/bin/bt-agent -c NoInputNoOutput

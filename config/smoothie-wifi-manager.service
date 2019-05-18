@@ -5,10 +5,10 @@ After=bluetooth.target
 
 [Service]
 Type=simple
-User=pi
-Group=pi
+Environment="PATH=/home/pi/venv/bin"
 WorkingDirectory=/home/pi/smoothie-bluetooth-serial-wifi
 ExecStart=/home/pi/smoothie-bluetooth-serial-wifi/main.py
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target

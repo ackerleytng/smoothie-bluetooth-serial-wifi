@@ -1,10 +1,10 @@
 # Bluetooth Config
 
-| File                    | Path on raspi                               | Purpose                                                                                                |
-| ---                     | ---                                         | ---                                                                                                    |
-| bt-agent.service        | /etc/systemd/system/bt-agent.service        | Starts agent to handle authentication                                                                  |
-| bt-wifi-manager.service | /etc/systemd/system/bt-wifi-manager.service | Starts wifi manager to handle incoming Bluetooth serial connections                                    |
-| bluetooth.service       | /lib/systemd/system/bluetooth.service       | Override bluetooth.service on the raspi for compatibility and to add Serial Port profile for discovery |
+| File                          | Path on raspi                                     | Purpose                                                                                                |
+| ---                           | ---                                               | ---                                                                                                    |
+| smoothie-agent.service        | /etc/systemd/system/smoothie-agent.service        | Starts agent to handle authentication                                                                  |
+| smoothie-wifi-manager.service | /etc/systemd/system/smoothie-wifi-manager.service | Starts wifi manager to handle incoming Bluetooth serial connections                                    |
+| bluetooth.service             | /lib/systemd/system/bluetooth.service             | Override bluetooth.service on the raspi for compatibility and to add Serial Port profile for discovery |
 
 # Setup
 
@@ -18,10 +18,10 @@ sudo systemctl daemon-reload
 # Start these services
 
 ```
-sudo systemctl enable bt-agent
-sudo systemctl start bt-agent
-sudo systemctl enable bt-wifi-manager
-sudo systemctl start bt-wifi-manager
+sudo systemctl enable smoothie-agent
+sudo systemctl start smoothie-agent
+sudo systemctl enable smoothie-wifi-manager
+sudo systemctl start smoothie-wifi-manager
 ```
 
 # Bluetooth configuration
