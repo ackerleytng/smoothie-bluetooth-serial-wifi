@@ -1,4 +1,5 @@
 import re
+import subprocess
 
 from utils.connectivity import is_connected_to_internet
 from utils.wifi_list import scan_wifi_aps
@@ -59,6 +60,16 @@ def refresh_handler(_):
     return "smoothie should have been refreshed! Give it some time!"
 
 
+def restart_handler(_):
+    subprocess.Popen(["/sbin/reboot"])
+    return "smoothie has started rebooting! Give it some time!"
+
+
+def shutdown_handler(_):
+    subprocess.Popen(["/sbin/poweroff"])
+    return "smoothie has started shutting down! Give it some time!"
+
+
 commands = {
     "connected?": {
         "description": "check if smoothie is connected to the internet",
@@ -80,5 +91,13 @@ commands = {
     "refresh": {
         "description": "refresh smoothie after connecting to wifi",
         "handler": refresh_handler,
+    },
+    "restart": {
+        "description": "restart (reboot) smoothie",
+        "handler": restart_handler,
+    },
+    "shutdown": {
+        "description": "shutdown smoothie before unplugging power!",
+        "handler": shutdown_handler,
     },
 }
