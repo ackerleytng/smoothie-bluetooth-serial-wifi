@@ -54,9 +54,9 @@ def disconnect_handler(_):
     return "Removed existing wifi configuration"
 
 
-def restart_handler(_):
+def refresh_handler(_):
     refresh_chromium()
-    return "smoothie should have restarted! Give it some time!"
+    return "smoothie should have been refreshed! Give it some time!"
 
 
 commands = {
@@ -77,8 +77,8 @@ commands = {
         "description": "disconnect from wifi",
         "handler": disconnect_handler,
     },
-    "restart": {
-        "description": "restart smoothie after connecting to wifi",
-        "handler": restart_handler,
-    }
+    "refresh": {
+        "description": "refresh smoothie after connecting to wifi",
+        "handler": refresh_handler,
+    },
 }
